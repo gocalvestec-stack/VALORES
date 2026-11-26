@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Acompanhe câmbio, inflação e poder de compra no mundo.">
+  <title>GONÇALVES CÂMBIO GLOBAL</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<header class="topo">
+  <div class="logo">🌎 GONÇALVES <span>CÂMBIO GLOBAL</span></div>
+  <button id="atualizar">↻ Atualizar dados</button>
+</header>
+
+<nav>
+  <a href="#inicio">Início</a>
+  <a href="#moedas">Câmbio</a>
+  <a href="#inflacao">Inflação</a>
+  <a href="#poder">Poder de compra</a>
+</nav>
+
+<main>
+  <section class="hero" id="inicio">
+    <span>PAINEL ECONÔMICO INTERNACIONAL</span>
+    <h1>O valor do dinheiro<br>em todo o mundo.</h1>
+    <p>Compare moedas, acompanhe a inflação e entenda o poder de compra de cada país.</p>
+    <div id="status">Conectando às fontes de dados...</div>
+  </section>
+
+  <section class="resumo">
+    <article class="card">
+      <span>DÓLAR EM REAIS</span>
+      <h2 id="dolar">Carregando...</h2>
+      <small id="variacaoDolar">Cotação atual</small>
+    </article>
+
+    <article class="card">
+      <span>EURO EM REAIS</span>
+      <h2 id="euro">Carregando...</h2>
+      <small>Cotação atual</small>
+    </article>
+
+    <article class="card">
+      <span>LIBRA EM REAIS</span>
+      <h2 id="libra">Carregando...</h2>
+      <small>Cotação atual</small>
+    </article>
+  </section>
+
+  <section class="secao" id="moedas">
+    <div class="titulo">
+      <div>
+        <span class="subtitulo">MERCADO CAMBIAL</span>
+        <h2>Câmbio mundial</h2>
+      </div>
+      <input type="search" id="pesquisa" placeholder="Pesquisar moeda...">
+    </div>
+
+    <div class="tabela-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Moeda</th>
+            <th>Valor em R$</th>
+            <th>País / Região</th>
+          </tr>
+        </thead>
+        <tbody id="listaMoedas">
+          <tr><td colspan="3">Carregando cotações...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="secao" id="inflacao">
+    <span class="subtitulo">PREÇOS E ECONOMIA</span>
+    <h2>Inflação dos países</h2>
+    <p class="explicacao">Consulte indicadores anuais de inflação publicados pelo Banco Mundial.</p>
+    <div class="filtro">
+      <input type="search" id="pesquisaInflacao" placeholder="Pesquisar país...">
+      <select id="anoInflacao">
+        <option value="2024">2024</option>
+        <option value="2023">2023</option>
+        <option value="2022">2022</option>
+      </select>
+    </div>
+    <div class="tabela-container">
+      <table>
+        <thead>
+          <tr>
+            <th>País</th>
+            <th>Inflação anual</th>
+            <th>Situação</th>
+          </tr>
+        </thead>
+        <tbody id="listaInflacao">
+          <tr><td colspan="3">Carregando indicadores...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="secao" id="poder">
+    <span class="subtitulo">PODER DE COMPRA</span>
+    <h2>Quanto vale seu dinheiro?</h2>
+    <p class="explicacao">Compare o valor de uma quantia em reais com outras moedas usando o câmbio atual.</p>
+    <div class="calculadora">
+      <label for="valorReal">Valor em reais (R$)</label>
+      <input type="number" id="valorReal" value="100" min="0">
+      <label for="moedaDestino">Converter para</label>
+      <select id="moedaDestino">
+        <option value="USD">Dólar americano (USD)</option>
+        <option value="EUR">Euro (EUR)</option>
+        <option value="GBP">Libra esterlina (GBP)</option>
+        <option value="JPY">Iene japonês (JPY)</option>
+        <option value="ARS">Peso argentino (ARS)</option>
+      </select>
+      <button id="calcular">Calcular</button>
+      <h3 id="resultadoCompra">Resultado aparecerá aqui</h3>
+      <small>Conversão cambial não representa, sozinha, o poder de compra local.</small>
+    </div>
+  </section>
+
+  <footer>
+    <b>GONÇALVES CÂMBIO GLOBAL</b>
+    <p>Informações econômicas para acompanhar o mundo.</p>
+    <small>Indicadores sujeitos a atualização e revisão pelas fontes oficiais.</small>
+  </footer>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
